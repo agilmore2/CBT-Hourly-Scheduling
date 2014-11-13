@@ -1,0 +1,11 @@
+# History files
+.Rhistory
+
+# R data files from past sessions
+.Rdata
+
+# RStudio files
+.Rproj.user/
+
+# RiverWare backup files (model, ruleset, SCT, etc)
+.bak
