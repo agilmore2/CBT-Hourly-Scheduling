@@ -1,0 +1,44 @@
+# RiverWare_Ruleset 5.2.1 Patch
+# Created 10:24 April 1, 2010
+# 
+RULESET
+AGENDA_ORDER ASCENDING;
+DESCRIPTION "";
+PRECISION   8;
+IS_GLOBAL   TRUE;
+BEGIN
+
+  UTILITY_GROUP "Utility Group";
+  DESCRIPTION   "";
+  ACTIVE        TRUE;
+  BEGIN
+
+    FUNCTION       "DayBeforeStart" (  )
+    RETURN_TYPE    DATETIME;
+    SCALE_UNITS    "";
+    DESCRIPTION    "";
+    ACTIVE         TRUE;
+    PRE_EXEC_DIAG  FALSE;
+    POST_EXEC_DIAG FALSE;
+    BEGIN
+
+      "MidnightofStart"(  ) - 23.00000000 "hour";
+
+    END;
+
+    FUNCTION       "MidnightofStart" (  )
+    RETURN_TYPE    DATETIME;
+    SCALE_UNITS    "";
+    DESCRIPTION    "";
+    ACTIVE         TRUE;
+    PRE_EXEC_DIAG  FALSE;
+    POST_EXEC_DIAG FALSE;
+    BEGIN
+
+      @"24:00:00 Start Month Start DayOfMonth, Start Year";
+
+    END;
+
+  END;
+
+END
